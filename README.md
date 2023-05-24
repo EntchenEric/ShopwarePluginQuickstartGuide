@@ -9,7 +9,7 @@ developement
 |-shopware-apps
 |-shopware-plugins
 
-$${\color{red}The folders shuld not contain any contents to avoid problems with Shopware later on}$$
+{\color{red}The folders shuld not contain any contents to avoid problems with Shopware later on}
 
 Modify this Command accordingly to your folder locations:
 `docker run -d -p 80:80 -p 22:22 -p 3306:3306 -v {Pluginfolder location}:/var/www/html/custom/plugins -v {Appfolder location}:/var/www/html/custom/apps --env MYSQL_PWD=root dockware/dev:6.5.0.0`
@@ -18,7 +18,7 @@ Modify this Command accordingly to your folder locations:
 the Path of your plugin folder is `C:\Users\User\developement\shopware-plugins` and the path of your app folder is `C:\Users\User\developement\shopware-apps` then your command shuld look like this:
 `docker run -d -p 80:80 -p 22:22 -p 3306:3306 -v C:/Users/User/developement/shopware-plugins:/var/www/html/custom/plugins -v C:/Users/User/developement/shopware-apps:/var/www/html/custom/apps --env MYSQL_PWD=root dockware/dev:6.5.0.0`
 
-#$${\color{red}IMPORTANT}$$ 
+#{\color{red}IMPORTANT}$
 - I had problems with the developement folder in the root of my drive e.g. `C:\developement` if you have problems too try to move the folder inside of a User
 - Note that you do NOT use backslashes (\) like the path you get when you copy it from Windows. You have to replace them with forward slashes (/)
 - If nothing happens or you get a error, make shure Docker Desktop is running
@@ -26,7 +26,7 @@ the Path of your plugin folder is `C:\Users\User\developement\shopware-plugins` 
 Now open a terminal and paste in the command. You shuld now get a random string e.g. `f3f1afdc6a2c46e6000d96d6bdb5a29487f110bbfd4c154628e2c80a77cc46e4`
 
 If you go to your Docker Containers now you shuld see a new Container that shuld already be started automaticly. If not, start it. Now you can go on localhost and you shuld see a DemoStore.
-#$${\color{red}Errors that might occure}$$
+#{\color{red}Errors that might occure}
 - `The Port is already in use` you already have something running on port 80. Stop that or change the Port in the command
 - `this site could not be reached` you may entered a port. just go to localhost or localhost:80 do NOT go to localhost:3000 or something simmilar
 - `this site could not be reached` if the previous solution didnt helped, try to go to http://localhost this may help
@@ -37,7 +37,7 @@ If you go to your Docker Containers now you shuld see a new Container that shuld
 - Click on the container name
 - Go to the `Terminal` Tab
 - enter `su`
-- enter your password `If you dont know your password or you didnt change it, its probably root` $${\color{red}Your password does not show up when your typing. Just type.}$$ 
+- enter your password `If you dont know your password or you didnt change it, its probably root` {\color{red}Your password does not show up when your typing. Just type.}
 - enter the command `bin/console`
 - ow a list with all avaiable commands shuld show up. If you get a Error you shuld debug it.
 
@@ -57,7 +57,7 @@ Invalid Names:
 - ericDemoPlugin
 - 16EricDemoPlugin
 
-$${\color{red}you dont get any feedback in the console. If nothing happens, the creation was successfull.}$$
+{\color{red}you dont get any feedback in the console. If nothing happens, the creation was successfull.}
 
 #Step3: Edit the composer.json file
 
@@ -129,7 +129,7 @@ I will show you how you can create a localhost/jobs page, but you will be able t
 
 #Step 1: Create the Controller
 
-- Inside of the `src` folder, create a `Storefront` folder and inside of that create a `Controller` folder. Inside of the Controller folder create a file accordingly to the route you want to create. $${\color{red}IMPORTANT:}$$ the file has to end with `Controller` and it has to be a php file. Best Practice: Write it in UpperCamelCase
+- Inside of the `src` folder, create a `Storefront` folder and inside of that create a `Controller` folder. Inside of the Controller folder create a file accordingly to the route you want to create. {\color{red}IMPORTANT:} the file has to end with `Controller` and it has to be a php file. Best Practice: Write it in UpperCamelCase
 -   Valid Names:
 -     JobController.php
 -     MyRouteController.php
@@ -140,7 +140,7 @@ I will show you how you can create a localhost/jobs page, but you will be able t
 -     Route.js
 - Copy and Paste the base code from [Shopwares Docs](https://developer.shopware.com/docs/guides/plugins/plugins/storefront/add-custom-controller#storefront-controller-class-example)
 -   you can directly copy and paste from the second ExampleController.php file, but remove the contents inside of the `showExample` function for now. 
--   $${\color{red}IMPORTANT:}$$ change the Namespace. You namespace has to be `[prefix]\[pluginName]\Storefront\Controller` e.g. `namespace Eric\DemoPlugin\Storefront\Controller;`
+-   {\color{red}IMPORTANT:} change the Namespace. You namespace has to be `[prefix]\[pluginName]\Storefront\Controller` e.g. `namespace Eric\DemoPlugin\Storefront\Controller;`
 -   also change the name of the Functions accordingly
 -   for now remove the parameters from the showExample function your renamed. Also remove the `: Response`
 - Now you have to change the contents of the `@Route("/example", name="frontend.example.example", methods={"GET"})` to `@Route("/[name of Route]", name="frontend.[name of Route]", methods={"GET"})`
@@ -229,7 +229,7 @@ Now create inside of the `src/Ressources/config` folder a file called `routes.xm
 
 If you now go to [localhost/jobs](http://localhost:80/jobs) you will be on your own page. however this Page does not contain the theme of the store nor the Header and footer. 
 
-$${\color{red}No route found}$$
+{\color{red}No route found}
 Try clearing the Cash at the [admin panel](http://localhost/admin#/sw/settings/cache/index) under settings -> System -> Cashes & Indexes -> Clear Cashes
 
 #Your Folder Structure shuld now look like this:
