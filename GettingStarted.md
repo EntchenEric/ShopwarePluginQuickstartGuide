@@ -52,6 +52,7 @@ Im not shure about special characters and non english letters, but I would preve
 Valid Names:
 - EricDemoPlugin
 - EricTryesToNameAPlugin
+
 Invalid Names:
 - DemoPlugin
 - ericdemoplugin
