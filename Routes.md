@@ -1,22 +1,51 @@
+>__Note__
+>
+>I will show you how you can create a localhost/jobs page, but you will be able to create any route you want with this tutorial. Please make shure you have a [Skeleton Plugin](https://github.com/kollhdxdlp/ShopwarePluginQuickstartGuide/blob/main/GettingStarted.md)
 
-I will show you how you can create a localhost/jobs page, but you will be able to create any route you want with this tutorial.
-
-#Step 1: Create the Controller
+# Step 1: Create the Controller
 
 - Inside of the `src` folder, create a `Storefront` folder and inside of that create a `Controller` folder. Inside of the Controller folder create a file accordingly to the route you want to create. **IMPORTANT: the file has to end with `Controller` and it has to be a php file. Best Practice: Write it in UpperCamelCase
--   Valid Names:
--     JobController.php
--     MyRouteController.php
--   Invalid Names:
--     Job.php
--     JobRoute.php
--     JobControler.php (note that you spell Controller right)
--     Route.js
-- Copy and Paste the base code from [Shopwares Docs](https://developer.shopware.com/docs/guides/plugins/plugins/storefront/add-custom-controller#storefront-controller-class-example)
+
+Valid Names:
+- JobController.php
+- MyRouteController.php
+
+Invalid Names:
+- Job.php
+- JobRoute.php
+- JobControler.php (note that you spell Controller right)
+-  Route.js
+
+
+- Copy and Paste the base code from [Shopwares Docs](https://developer.shopware.com/docs/guides/plugins/plugins/storefront/add-custom-controller#storefront-controller-class-example) or from here:
+```
+<?php declare(strict_types=1);
+
+namespace Swag\BasicExample\Storefront\Controller;
+
+use Shopware\Core\System\SalesChannel\SalesChannelContext;
+use Shopware\Storefront\Controller\StorefrontController;
+use Symfony\Component\HttpFoundation\Request;
+use Symfony\Component\HttpFoundation\Response;
+use Symfony\Component\Routing\Annotation\Route;
+
+/**
+ * @Route(defaults={"_routeScope"={"storefront"}})
+ */
+class ExampleController extends StorefrontController
+{
+    /**
+    * @Route("/example", name="frontend.example.example", methods={"GET"})
+    */
+    public function showExample()
+    {
+    }
+}
+```
 -   you can directly copy and paste from the second ExampleController.php file, but remove the contents inside of the `showExample` function for now. 
 -   **IMPORTANT:** change the Namespace. You namespace has to be `[prefix]\[pluginName]\Storefront\Controller` e.g. `namespace Eric\DemoPlugin\Storefront\Controller;`
 -   also change the name of the Functions accordingly
--   for now remove the parameters from the showExample function your renamed. Also remove the `: Response`
+-   Please also remove the `: Response` from the showExample function
 - Now you have to change the contents of the `@Route("/example", name="frontend.example.example", methods={"GET"})` to `@Route("/[name of Route]", name="frontend.[name of Route]", methods={"GET"})`
 -   example: `@Route("/jobs", name="frontend.jobs", methods={"GET"})`
 - For testing purposes echo some HTML Code into your function
@@ -57,7 +86,7 @@ If you now try to go to localhost/jobs, you will get an Error. Thats because we 
 
 ### Open the `services.xml` file located in `src/Ressources/config`
 
-Paste the following Code I got from the (Shopware Docs)[https://developer.shopware.com/docs/guides/plugins/plugins/storefront/add-custom-controller#services.xml-example] and paste it under the Services:
+Paste the following Code I got and slightly edited from the [Shopware Docs](https://developer.shopware.com/docs/guides/plugins/plugins/storefront/add-custom-controller#services.xml-example) and paste it under the Services:
 ```xml
     <service id="[prefix]\[pluginName]\Storefront\Controller\[className]" public="true">
         <argument type="service" id="Shopware\Storefront\Page\GenericPageLoader" />
