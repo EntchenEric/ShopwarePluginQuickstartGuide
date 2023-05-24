@@ -152,3 +152,88 @@ developement
       |-EricDemoPlugin.php (or your Plugin Name)
     |-composer.json
 ```
+
+# Step3: Add the Template to the Route
+
+Inside of the Resources folder create a Folder called `views`, inside there `storefront` and inside of that create a Folder called `page` *Make shure to write everything in small letters only*
+Here create a [twig](https://twig.symfony.com) file called `[name].html.twig`. 
+Example:
+jobs.html.twig
+
+now Copy and Paste [This code from the docs](https://developer.shopware.com/docs/guides/plugins/plugins/storefront/add-custom-controller#adding-template) or copy it from here:
+```twig
+{% sw_extends '@Storefront/storefront/base.html.twig' %}
+
+{% block base_content %}
+    <h1>Our example controller!</h1>
+{% endblock %}
+```
+
+Inside of your php file from earlyer, you now have to add the following code to your function:
+```php
+return $this->renderStorefront(@[pluginName with Prefix]/storefront/page/[twig file name].html.twig);
+```
+(when filled out the line shuld look like this: `return $this->renderStorefront(@EricDemoPlugin/storefront/page/jobs.html.twig);`)
+
+if you now reload your localhost/[route] page, you will see the theme. However the contents of e.g. your header are not synced. 
+
+# Step4: Understand how to pass Data to the twig file
+
+inside of the renderStorefront function, add a Array as second attribute like this: `return $this->renderStorefront(@[pluginName with Prefix]/storefront/page/[twig file name].html.twig,[]);`
+Inside of this Array you can Pass values to the twig file via `[key] => [value]`. when complete, it looks like this:
+```php
+return $this->renderStorefront(@EricDemoPlugin/storefront/page/jobs.html.twig,[
+    'heading' => 'Welcome to our Job Page!';
+]);
+```
+
+If you want to see what data you can display in the twig file, you can add `{{ dump() }}` to your twig file like this:
+```twig
+{% sw_extends '@Storefront/storefront/base.html.twig' %}
+
+{% block base_content %}
+    {{ dump() }}
+    <h1>Our example controller!</h1>
+{% endblock %}
+```
+
+This will then display a Array where you can see all the keys and values you have access to, including the heading.
+To now use the values in your twig file just add {{ [key] }}. This will display the value of the key. If the Key does not exist, nothing will be displayed. So make shure you spell your key right if you dont get your exspected output.
+In our Example this looks like this:
+```twig
+{% sw_extends '@Storefront/storefront/base.html.twig' %}
+
+{% block base_content %}
+    <h1>{{ header }}</h1>
+{% endblock %}
+```
+
+# Step5: Generic Page loading (Loading in the Header with its contents)
+
+In your Controller.php file you created in Step 1, add the following lines:
+```php
+use Shopware\Storefront\Page\GenericPageLoaderInterface;
+use Shopware\Core\System\SalesChannel\SalesChannelContext;
+```
+in your Class [Not in the function inside of the class] now Create this variable: `private GenericPageLoaderInterface $genericPageLoader;`
+
+Now add a constructor inside of the class:
+```php
+public function __construct(GenericPageLoaderInterface $genericPageLoader){
+    $this->genericPageLoader = $genericPageLoader;
+}
+```
+
+you have to add the following attributes to your function: `Request $request, SalesChannelContext $context` and also add the `: Response` back you removed in Step 1
+
+now Inside of your function, add this code:
+```php
+$page = $this->genericPageLoader->load($request, $context);
+```
+
+and then just pass the page variable with the value 'page' to your twig file. Make shure you spell it `page` because Shopware will autodetect it and handle everything for you.
+
+your class shuld now look like this:
+```php
+
+```
