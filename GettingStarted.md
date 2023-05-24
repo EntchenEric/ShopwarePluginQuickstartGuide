@@ -21,8 +21,8 @@ the Path of your plugin folder is `C:\Users\User\developement\shopware-plugins` 
 `docker run -d -p 80:80 -p 22:22 -p 3306:3306 -v C:/Users/User/developement/shopware-plugins:/var/www/html/custom/plugins -v C:/Users/User/developement/shopware-apps:/var/www/html/custom/apps --env MYSQL_PWD=root dockware/dev:6.5.0.0`
 
 ## **IMPORTANT**
-- I had problems with the developement folder in the root of my drive e.g. `C:\developement` if you have problems too try to move the folder inside of a User
-- Note that you do NOT use backslashes (\) like the path you get when you copy it from Windows. You have to replace them with forward slashes (/)
+- I had problems with the developement folder being placed in the root of my drive e.g. `C:\developement` if you have problems too try to move the folder inside of a User
+- Note that you do NOT use backslashes (\\) like the path you get when you copy it from Windows. You have to replace them with forward slashes (/)
 - If nothing happens or you get a error, make shure Docker Desktop is running
 
 Now open a terminal and paste in the command. You shuld now get a random string e.g. `f3f1afdc6a2c46e6000d96d6bdb5a29487f110bbfd4c154628e2c80a77cc46e4`
