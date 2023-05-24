@@ -11,7 +11,7 @@ developement
 |-shopware-plugins
 ```
 
-{\color{red}The folders shuld not contain any contents to avoid problems with Shopware later on}
+$${\color{red}The folders shuld not contain any contents to avoid problems with Shopware later on}
 
 Modify this Command accordingly to your folder locations:
 `docker run -d -p 80:80 -p 22:22 -p 3306:3306 -v {Pluginfolder location}:/var/www/html/custom/plugins -v {Appfolder location}:/var/www/html/custom/apps --env MYSQL_PWD=root dockware/dev:6.5.0.0`
