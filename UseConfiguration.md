@@ -60,7 +60,7 @@ class JobController extends StorefrontController
     public function __construct(GenericPageLoaderInterface $genericPageLoader, SystemConfigService $systemConfigService)
     {
         $this->genericPageLoader = $genericPageLoader;
-        $this->systemConfigService = $systemConfigService
+        $this->systemConfigService = $systemConfigService;
     }
 
 
