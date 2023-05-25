@@ -20,7 +20,7 @@ Your __construct function shuld now look like this (if you also followed the [ro
     public function __construct(GenericPageLoaderInterface $genericPageLoader, SystemConfigService $systemConfigService)
     {
         $this->genericPageLoader = $genericPageLoader;
-        this->systemConfigService = $systemConfigService
+        $this->systemConfigService = $systemConfigService
     }
 ```
 
