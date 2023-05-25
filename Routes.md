@@ -233,7 +233,43 @@ $page = $this->genericPageLoader->load($request, $context);
 
 and then just pass the page variable with the value 'page' to your twig file. Make shure you spell it `page` because Shopware will autodetect it and handle everything for you.
 
-your class shuld now look like this:
+your Controller.php shuld now look like this:
 ```php
+<?php declare(strict_types=1);
 
+namespace Eric\DemoPlugin\Storefront\Controller;
+
+use Symfony\Component\HttpFoundation\Request;
+use Symfony\Component\HttpFoundation\Response;
+use Symfony\Component\Routing\Annotation\Route;
+use Shopware\Storefront\Page\GenericPageLoaderInterface;
+use Shopware\Storefront\Controller\StorefrontController;
+use Shopware\Core\Framework\Routing\Annotation\RouteScope;
+use Shopware\Core\System\SalesChannel\SalesChannelContext;
+
+/**
+ * @Route(defaults={"_routeScope"={"storefront"}})
+ */
+class JobController extends StorefrontController
+{
+    private GenericPageLoaderInterface $genericPageLoader;
+ 
+    public function __construct(GenericPageLoaderInterface $genericPageLoader)
+    {
+        $this->genericPageLoader = $genericPageLoader;
+    }
+
+    /**
+    * @Route("/jobs", name="frontend.jobs", methods={"GET"})
+    */
+    public function showJobs(Request $request, SalesChannelContext $context) :Response
+    {
+        $page = $this->genericPageLoader->load($request, $context); 
+
+        return $this -> renderStorefront('@M28TestPlugin/storefront/page/jobs.html.twig', [
+            'heading' => "Welcome to Jobs page",
+            'page' => $page
+        ]);
+    }
+}
 ```
