@@ -76,7 +76,7 @@ The Most important ones are:
 > For obvious reasons, choose a different Name for every field.
 
 
-Next Step will be to [Use the Configuration]()
+Next Step will be to [Use the Configuration](https://github.com/kollhdxdlp/ShopwarePluginQuickstartGuide/blob/main/UseConfiguration.md)
 
 
 
