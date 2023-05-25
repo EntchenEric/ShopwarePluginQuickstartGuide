@@ -18,6 +18,8 @@ Table of Contents:
 - [Getting started](https://github.com/kollhdxdlp/ShopwarePluginQuickstartGuide/blob/main/GettingStarted.md)
 - [Routes](https://github.com/kollhdxdlp/ShopwarePluginQuickstartGuide/blob/main/Routes.md)
 - [Use CSS](https://github.com/kollhdxdlp/ShopwarePluginQuickstartGuide/blob/main/embeddingCSS.md)
-- [Use JS]()
+- [Use JS](https://github.com/kollhdxdlp/ShopwarePluginQuickstartGuide/blob/main/embeddingJS.md)
+- [Add Configuration](https://github.com/kollhdxdlp/ShopwarePluginQuickstartGuide/blob/main/AddConfiguration.md)
+- [Use Configuration](https://github.com/kollhdxdlp/ShopwarePluginQuickstartGuide/blob/main/UseConfiguration.md)
 
 ## If you find any spelling mistakes, typos or simmilar, please let me know, I will try to fix them as fast as possible.
