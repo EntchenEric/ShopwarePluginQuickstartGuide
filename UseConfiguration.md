@@ -55,7 +55,7 @@ use Shopware\Core\System\SystemConfig\SystemConfigService;
 class JobController extends StorefrontController
 {
     private GenericPageLoaderInterface $genericPageLoader;
-    private SystemConfigServie $systemConfigService;
+    private SystemConfigService $systemConfigService;
  
     public function __construct(GenericPageLoaderInterface $genericPageLoader, SystemConfigService $systemConfigService)
     {
