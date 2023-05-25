@@ -64,7 +64,7 @@ const PluginManager = window.PluginManager;
 PluginManager.register('[Name]', [ClassName]);
 ```
 
->__warning__
+>__Warning__
 >
 > To avoid conflics, never use the same ClassName in two js files.
 
@@ -85,3 +85,7 @@ run the Command in your Docker Terminal. If you dont know how, you can larn [her
 And now you shuld see the Changes you made. If not, make shure to [Clear the Cash](https://github.com/kollhdxdlp/ShopwarePluginQuickstartGuide/blob/main/sideguids/clearCash.md)
 
 If you still dont see any Changes, you may have cashed something on your PC. In Chrome: Hold Shift and press the Refresh Button. Other Browsers may have different Ways to clear the Cash. Google can help you.
+
+>__note__
+>
+> The Code will be Executed in every Page of the Store
