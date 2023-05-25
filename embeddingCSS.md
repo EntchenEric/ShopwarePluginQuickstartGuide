@@ -48,7 +48,7 @@ Now add the CSS you want to add. My Code will just be something simple:
 
 Every time you make Changes to your SCSS you will have to build your project. in that process, the scss gets translated to a css file. 
 
-# To build your CSS
+# To build your Project
 there are two ways:
 
 1: Development:
