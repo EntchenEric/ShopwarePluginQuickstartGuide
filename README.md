@@ -17,6 +17,7 @@ Table of Contents:
 *Plugins*
 - [Getting started](https://github.com/kollhdxdlp/ShopwarePluginQuickstartGuide/blob/main/GettingStarted.md)
 - [Routes](https://github.com/kollhdxdlp/ShopwarePluginQuickstartGuide/blob/main/Routes.md)
-
+- [Use CSS](https://github.com/kollhdxdlp/ShopwarePluginQuickstartGuide/blob/main/embeddingCSS.md)
+- [Use JS]()
 
 ## If you find any spelling mistakes, typos or simmilar, please let me know, I will try to fix them as fast as possible.
