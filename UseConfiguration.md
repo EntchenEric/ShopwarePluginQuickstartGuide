@@ -32,3 +32,50 @@ then just pass the information to your Route like we did in [Step 4 of the route
 > __Warning__
 >
 > If you get an Error, try to [Clear the Cash](https://github.com/kollhdxdlp/ShopwarePluginQuickstartGuide/blob/main/sideguids/clearCash.md)
+
+
+If you followed the [route guide](https://github.com/kollhdxdlp/ShopwarePluginQuickstartGuide/blob/main/Routes.md) your code looks now like this:
+```php
+<?php declare(strict_types=1);
+
+namespace Eric\DemoPlugin\Storefront\Controller;
+
+use Symfony\Component\HttpFoundation\Request;
+use Symfony\Component\HttpFoundation\Response;
+use Symfony\Component\Routing\Annotation\Route;
+use Shopware\Storefront\Page\GenericPageLoaderInterface;
+use Shopware\Storefront\Controller\StorefrontController;
+use Shopware\Core\Framework\Routing\Annotation\RouteScope;
+use Shopware\Core\System\SalesChannel\SalesChannelContext;
+use Shopware\Core\System\SystemConfig\SystemConfigService;
+
+/**
+ * @Route(defaults={"_routeScope"={"storefront"}})
+ */
+class JobController extends StorefrontController
+{
+    private GenericPageLoaderInterface $genericPageLoader;
+    private SystemConfigServie $systemConfigService;
+ 
+    public function __construct(GenericPageLoaderInterface $genericPageLoader, SystemConfigService $systemConfigService)
+    {
+        $this->genericPageLoader = $genericPageLoader;
+        $this->systemConfigService = $systemConfigService
+    }
+
+
+    /**
+    * @Route("/jobs", name="frontend.jobs", methods={"GET"})
+    */
+    public function showJobs(Request $request, SalesChannelContext $context) :Response
+    {
+        $page = $this->genericPageLoader->load($request, $context); 
+        $Heading = $this->systemConfigService->get('EricDemoPlugin.config.Title');
+
+        return $this -> renderStorefront('@EricDemoPlugin/storefront/page/jobs.html.twig', [
+            'heading' => $Heading,
+            'page' => $page
+        ]);
+    }
+}
+```
