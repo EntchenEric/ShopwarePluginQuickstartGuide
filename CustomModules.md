@@ -83,3 +83,5 @@ Your Folder Structure now looks somewhat like this:
                 |-de-DE.json
                 |-en-GB.json
 ```
+
+## Please keep in Mind that you have to build your plugin with the command `bin/build-administration.sh` before you will see any changes.
