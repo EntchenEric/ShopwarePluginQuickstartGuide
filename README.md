@@ -22,5 +22,6 @@ Table of Contents:
 - [Add Configuration](https://github.com/kollhdxdlp/ShopwarePluginQuickstartGuide/blob/main/AddConfiguration.md)
 - [Use Configuration](https://github.com/kollhdxdlp/ShopwarePluginQuickstartGuide/blob/main/UseConfiguration.md)
 - [Adding an Image](https://github.com/kollhdxdlp/ShopwarePluginQuickstartGuide/blob/main/addingImage.md)
+- [Creating custom Modules](https://github.com/kollhdxdlp/ShopwarePluginQuickstartGuide/blob/main/CustomModules.md)
 
 ## If you find any spelling mistakes, typos or simmilar, please let me know, I will try to fix them as fast as possible.
