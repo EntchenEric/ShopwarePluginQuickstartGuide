@@ -40,7 +40,7 @@ Shopware.Module.register('[prefix]-[moduleName]', {
 });
 ```
 
-> __Note__
+> __Warning__
 > 
 > I have no Idea why, but you have to include the route js object at leaste like I have implemented it. You can add more contents, but you can not remove the list js object.
 
