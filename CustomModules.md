@@ -42,7 +42,7 @@ Shopware.Module.register('[prefix]-[moduleName]', {
 
 > __Warning__
 > 
-> I have no Idea why, but you have to include the route js object at leaste like I have implemented it. You can add more contents, but you can not remove the list js object.
+> You have to input at least one route. We will youse the list route in the next part of the tutorial. If you dont specify any route, your module does not work.
 
 Then we have to create a folder called `snippet` inside of out Module. Here, create two files: `de-DE.json` and `en-GB.json`. Here you can add your Translations. The `en-GB.json` Content for the above example would look like this:
 ```json
