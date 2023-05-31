@@ -58,6 +58,10 @@ The Most important ones are:
 </component>
 ```
 
+> __Note__
+>
+> getting the Image from a Media field is not that staight forward. If you wish to get information about a Image, use [This guide](https://github.com/kollhdxdlp/ShopwarePluginQuickstartGuide/blob/main/sideguids/showImage.md)
+
 *The Text Editor*:
 ```xml
 <component name="sw-text-editor">
