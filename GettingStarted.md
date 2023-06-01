@@ -14,7 +14,9 @@ developement
 >The folders shuld not contain any contents to avoid problems with Shopware later on
 
 Modify this Command accordingly to your folder locations:
-`docker run -d -p 80:80 -p 22:22 -p 3306:3306 -v {Pluginfolder location}:/var/www/html/custom/plugins -v {Appfolder location}:/var/www/html/custom/apps --env MYSQL_PWD=root dockware/dev:6.5.0.0`
+```
+docker run -d -p 80:80 -p 22:22 -p 3306:3306 -v {Pluginfolder location}:/var/www/html/custom/plugins -v {Appfolder location}:/var/www/html/custom/apps --env MYSQL_PWD=root dockware/dev:6.5.0.0
+```
 
 *Example*
 the Path of your plugin folder is `C:\Users\User\developement\shopware-plugins` and the path of your app folder is `C:\Users\User\developement\shopware-apps` then your command shuld look like this:
