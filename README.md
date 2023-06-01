@@ -25,5 +25,6 @@ Table of Contents:
 - [Creating custom Modules](https://github.com/kollhdxdlp/ShopwarePluginQuickstartGuide/blob/main/CustomModules.md)
 - [Adding Routes to Modules](https://github.com/kollhdxdlp/ShopwarePluginQuickstartGuide/blob/main/addingRoutesInModules.md)
 - [Store Data in the Database](https://github.com/kollhdxdlp/ShopwarePluginQuickstartGuide/blob/main/storingFilesInDatabase(entitie))
+- [Reading Data from the Database](https://github.com/kollhdxdlp/ShopwarePluginQuickstartGuide/blob/main/readingDataFromDatabase)
 
 ## If you find any spelling mistakes, typos or simmilar, please let me know, I will try to fix them as fast as possible.
