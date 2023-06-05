@@ -31,8 +31,8 @@ class JobPostCollection extends EntityCollection
     }
 }
 ```
-you dont really want to change that many files in here.
 
+First lets create a Definition. Here you will have to say what columns shuld be stored in your database. Please refer to [the docs](https://developer.shopware.com/docs/resources/references/core-reference/dal-reference/fields-reference) to get a complete look over all Datatypes. Make shure to always use the right Type. e.g. String is different than LongTextField
 
 `JobPostDefinition.php`
 ```
@@ -91,6 +91,7 @@ class JobPostDefinition extends EntityDefinition
    
 }
 ```
+
 Here in the Field Collection you shuld add the Fields you want to have.
 
 `FreeProductsEntity.php`:
