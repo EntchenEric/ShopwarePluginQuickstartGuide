@@ -34,6 +34,10 @@ class JobPostCollection extends EntityCollection
 
 First lets create a Definition. Here you will have to say what columns shuld be stored in your database. Please refer to [the docs](https://developer.shopware.com/docs/resources/references/core-reference/dal-reference/fields-reference) to get a complete look over all Datatypes. Make shure to always use the right Type. e.g. String is different than LongTextField
 
+> __Warning__
+> 
+> Something no one except me cares about: The Long Text can NOT store HTML Code. idk why and idk why they dont tell you but it is what it is ig
+
 `JobPostDefinition.php`
 ```
 <?php
