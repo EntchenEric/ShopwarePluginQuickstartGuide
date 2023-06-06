@@ -255,6 +255,14 @@ Now inside of your jobs-detail folder, create a [prefix]-jobs-detail.html.twig f
 {% endblock %}
 ```
 
+> __Note__
+> 
+> Normaly, the fields are `sw-{field}-field` where Field is the field you want from [here](https://developer.shopware.com/docs/guides/plugins/plugins/plugin-fundamentals/add-plugin-configuration#the-different-types-of-input-field)
+
+> __Warning__
+> 
+> Idk how but they somehow fucked up some of the fields e.g. the date field is NOT sw-date-field but sw-datepicker
+
 If you want to, you can also create a `[prefix]-jobs-detail.scss` file to add Styling.
 
 Next step: adding the routes:
