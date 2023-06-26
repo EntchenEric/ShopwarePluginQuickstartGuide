@@ -46,7 +46,7 @@ If you go to your Docker Containers now you shuld see a new Container that shuld
 >
 > Your password does not show up when your typing. Just type blind.
 - enter the command `bin/console`
-- ow a list with all avaiable commands shuld show up. If you get a Error you shuld debug it.
+- now a list with all avaiable commands shuld show up. If you get a Error you shuld debug it.
 
 
 enter the command `bin/console plugin:create [name]` 
