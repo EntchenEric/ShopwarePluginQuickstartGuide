@@ -41,7 +41,10 @@ If you go to your Docker Containers now you shuld see a new Container that shuld
 - Click on the container name
 - Go to the `Terminal` Tab
 - enter `su`
-- enter your password `If you dont know your password or you didnt change it, its probably root` {\color{red}Your password does not show up when your typing. Just type.}
+- enter your password `If you dont know your password or you didnt change it, its probably root`
+> __Note__
+>
+> Your password does not show up when your typing. Just type blind.
 - enter the command `bin/console`
 - ow a list with all avaiable commands shuld show up. If you get a Error you shuld debug it.
 
