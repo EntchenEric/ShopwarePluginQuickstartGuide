@@ -29,7 +29,7 @@ to add a input-field with the type int, you just have to write `<input-field typ
 >
 > The type must always be a String. `type=int` is not a valid type but `type="int"` is
 
-For accessibility ypi cam add sp,e ptjer attronites to your input-field:
+For accessibility you can add some attributes to your input-field:
 
 - Label:
 -   The Label will be displayed above your field. Here you can tell the User what he is supposed to enter.
